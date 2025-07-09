@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>00:00 — A Love Confession</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('bts-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding-top: 80px;
+      transition: background 1s ease;
+    }
+
+    #container {
+      background-color: rgba(0, 0, 0, 0.65);
+      margin: auto;
+      padding: 30px;
+      border-radius: 15px;
+      width: 85%;
+      max-width: 700px;
+      box-shadow: 0 0 20px #ff9ddf;
+      animation: fadeIn 1s ease;
+    }
+
+    button {
+      background: #ff77aa;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 25px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff5599;
+    }
+
+    #backBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #444;
+      font-size: 14px;
+      padding: 10px 15px;
+      border-radius: 15px;
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .emoji {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<audio id="bgMusic" autoplay loop>
+  <source src="https://example.com/00-00.mp3" type="audio/mpeg">
+  <!-- Replace with actual MP3 URL -->
+</audio>
+
+<div id="container">
+  <h2>💜 00:00 – A Moment Just for Us 💜</h2>
+  <p>Love, will you say yes to being mine again? 💍</p>
+  <button onclick="showYesOptions()">Yes 💗</button>
+  <button onclick="showNo()">No 💔</button>
+</div>
+
+<button id="backBtn" onclick="goBack()">💫 Select Me (if you had a change of heart)</button>
+
+<script>
+  let container = document.getElementById("container");
+  let backBtn = document.getElementById("backBtn");
+
+  function showYesOptions() {
+    container.innerHTML = `
+      <h2>🌸 Are you sure, my love?</h2>
+      <button onclick="show100()">100% Sure ❤️</button>
+      <button onclick="show5050()">50-50 🤔</button>
+    `;
+  }
+
+  function show100() {
+    container.innerHTML = `
+      <p>💬 There hasn’t been a single day where I haven’t thought about how beautiful it felt to be yours <br><br>
+      Every laugh every late night talk every small moment  they’re all carved in me like my favorite story <br><br>
+      I love you deeply endlessly and that love hasn’t faded not even for a second <br><br>
+      You stood by me when things weren’t easy and for that I’m grateful in ways words will never fully express <br><br>
+      You didn’t just stay  you carried love through storms and I see that now more than ever <br><br>
+      I don’t just want to remember us I want to live us again with more love more care and everything you truly deserve 💖
+      </p>
+    `;
+  }
+
+  function show5050() {
+    container.innerHTML = `
+      <p>Sometimes doubt is part of love too and I understand 🌫️</p>
+      <button onclick="showYesOptions()">🔙 Go back and choose again</button>
+    `;
+  }
+
+  function showNo() {
+    container.innerHTML = `
+      <p>😔 I’m so sorry for everything you had to go through because of me <br><br>
+      You didn’t deserve the confusion the pain or the moments that made you question your worth <br><br>
+      You gave me your heart your time your trust and I hurt the very things I should have protected <br><br>
+      I know I can’t undo the past but I carry the weight of it with me every day <br><br>
+      You were patient loving and strong through it all and I see that now <br><br>
+      I’m truly sorry not just for what I did but for how it made you feel <br><br>
+      You didn’t deserve any of it 💔
+      </p>
+      <button onclick="showForgive()">Forgive 🙏</button>
+      <button onclick="showDontForgive()">Don’t Forgive ❌</button>
+    `;
+    backBtn.style.display = "block";
+  }
+
+  function showForgive() {
+    container.innerHTML = `
+      <p>🕊️ I know asking for forgiveness is not easy and forgiving me after everything you’ve been through is even harder <br><br>
+      You carried the weight of this relationship even when I made it heavier <br><br>
+      I hurt you in ways I wish I could take back <br><br>
+      An apology doesn’t erase the pain but I still need to say it <br><br>
+      If your heart ever has space for it I hope one day you’ll forgive me not because you owe it to me but because I want to prove that I can be better softer safer and more human for you and because of you 💞
+      </p>
+      <button onclick="showTrulyForgiven()">Truly Forgiven 💖</button>
+      <button onclick="showForgivenToday()">Forgiven for Today 🌤️</button>
+    `;
+  }
+
+  function showDontForgive() {
+    container.innerHTML = `
+      <p>💔 I know there’s a part of you that still loves me a soft spot you try to hide <br><br>
+      I know you hate that you still feel that way because it feels like betraying yourself after everything I put you through <br><br>
+      And I don’t blame you for that <br><br>
+      I’m not here to beg or to force my way back into your life <br><br>
+      I’m just here to love you in the ways I should have before <br><br>
+      To be gentle with the pieces I broke and to try in whatever small ways I can to help you heal <br><br>
+      Even if it’s from a distance <br><br>
+      Because loving you has never been the hard part hurting you was And I’ll carry that until I learn to make it right 🌧️
+      </p>
+    `;
+  }
+
+  function showTrulyForgiven() {
+    container.innerHTML = `
+      <p>💗 I know it is very difficult to forgive me but I will always try and ask for your forgiveness sweetheart 💌</p>
+    `;
+  }
+
+  function showForgivenToday() {
+    container.innerHTML = `
+      <p>🌷 You goddess of beauty thank you for accepting my apology today <br>I will ask for your apology tomorrow too 💐</p>
+    `;
+  }
+
+  function goBack() {
+    location.reload();
+  }
+</script>
+
+</body>
+</html>
